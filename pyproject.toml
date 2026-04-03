@@ -1,0 +1,113 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aetherdev"
+version = "1.0.0"
+description = "AetherDev Python runtime — AI agent engine, code analysis, and local LLM integration"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "AetherDev Contributors" }]
+keywords = ["ai", "agent", "code-generation", "llm", "developer-tool", "open-source"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+]
+dependencies = [
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.1",
+    "httpx>=0.27.0",
+    "aiofiles>=23.2.1",
+    "aiohttp>=3.9.3",
+    "openai>=1.13.3",
+    "anthropic>=0.20.0",
+    "python-dotenv>=1.0.1",
+    "rich>=13.7.1",
+    "typer>=0.9.0",
+    "gitpython>=3.1.41",
+    "tree-sitter>=0.21.3",
+    "tree-sitter-languages>=1.10.2",
+    "chromadb>=0.4.24",
+    "sentence-transformers>=2.5.1",
+    "numpy>=1.26.4",
+    "sqlalchemy>=2.0.28",
+    "alembic>=1.13.1",
+    "redis>=5.0.2",
+    "structlog>=24.1.0",
+    "tenacity>=8.2.3",
+    "bandit>=1.7.7",
+    "radon>=6.0.1",
+    "black>=24.2.0",
+    "ruff>=0.3.0",
+    "mypy>=1.9.0",
+    "psutil>=5.9.8",
+    "watchdog>=4.0.0",
+    "jinja2>=3.1.3",
+    "pygments>=2.17.2",
+    "tiktoken>=0.6.0",
+    "websockets>=12.0",
+    "pyzmq>=25.1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.1.0",
+    "pytest-asyncio>=0.23.5",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "httpx>=0.27.0",
+    "hypothesis>=6.99.6",
+    "factory-boy>=3.3.0",
+]
+stt = [
+    "openai-whisper>=20231117",
+    "sounddevice>=0.4.6",
+    "scipy>=1.12.0",
+]
+
+[project.scripts]
+aetherdev-py = "aetherdev.cli:app"
+aether-api = "aetherdev.api.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=src --cov-report=term-missing --cov-report=html --cov-fail-under=85 -v"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+exclude = ["tests/", "scripts/"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "TCH"]
+ignore = ["E501"]
+
+[tool.black]
+target-version = ["py311"]
+line-length = 100
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "scripts/*"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true

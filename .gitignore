@@ -1,0 +1,86 @@
+# ─── AetherDev .gitignore ─────────────────────────────────────────────────────
+
+# Environment — NEVER commit secrets
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+out/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+
+# Web UI build
+web-ui/dist/
+web-ui/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.Python
+dist-py/
+*.egg
+.eggs/
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Data & Database (user data — not committed)
+data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+
+# Logs
+logs/
+*.log
+pino.log
+
+# Test coverage
+coverage/
+playwright-report/
+test-results/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Plugins (user-installed — not committed by default)
+plugins/*/node_modules/
+
+# Temp files
+*.bak.*
+*.tmp
+.temp/
+
+# TypeScript cache
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Docker override (local customization)
+docker-compose.override.yml
+docker-compose.local.yml
