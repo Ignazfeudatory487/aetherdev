@@ -47,7 +47,7 @@ docker-compose up -d
 
 ### Option 2: Local Development
 ```bash
-git clone https://github.com/aetherdev/aetherdev
+git clone https://github.com/SardarAwais88/aetherdev
 cd aetherdev
 bash scripts/setup.sh
 npm run dev:all
