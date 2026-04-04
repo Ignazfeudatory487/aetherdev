@@ -38,7 +38,7 @@ AetherDev is a **fully local, zero-cost, open-source AI developer agent** that r
 
 ### Option 1: Docker (Recommended)
 ```bash
-git clone https://github.com/aetherdev/aetherdev
+git clone https://github.com/SardarAwais88/aetherdev
 cd aetherdev
 cp .env.example .env
 docker-compose up -d
